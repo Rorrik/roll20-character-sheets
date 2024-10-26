@@ -7,14 +7,10 @@
   <div class="sheet-core-header sheet-padb">
 		<div class="sheet-row">
 			<div class="sheet-col-1-4 sheet-margin-top sheet-logo" title="FABDOFS"></div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>30 September 2024</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>25 October 2024</p></div>
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_class"><br/>Class</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_level"><br/>Level</div>
-			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_class2"><br/>Class</div>
-			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_level2"><br/>Level</div>
-			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_class3"><br/>Class</div>
-			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_level3"><br/>Level</div>
 		</div>
 	</div>
 	<!-- Tabs-->
@@ -149,68 +145,70 @@
 				<div class="sheet-col-1-2 sheet-padr">
 					<h4 class="sheet-center">Saving Throws</h4>
 					<div class="sheet-row sheet-sub-header">
-						<div class="sheet-col-1-6 sheet-center sheet-small-label">Score</div>
-						<div class="sheet-col-3-8 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-8 sheet-center sheet-small-label">Score</div>
+						<div class="sheet-col-1-3 sheet-center sheet-small-label">&nbsp;</div>
 						<div class="sheet-col-1-8 sheet-center sheet-small-label">Roll</div>
-						<div class="sheet-col-1-6 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-5-24 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-12 sheet-center sheet-small-label">&nbsp;</div>
 						<div class="sheet-col-1-8 sheet-center sheet-small-label">Roll</div>
 					</div>
 					<div class="sheet-row">
-						<div class="sheet-col-1-6 sheet-padr"><input type="number" name="attr_save_death_ray" min="1" step="1" /></div>
-						<div class="sheet-col-3-8 sheet-small-label">Death Ray</div>
+						<div class="sheet-col-1-8 sheet-padr"><input type="number" name="attr_save_death_ray" min="1" step="1" /></div>
+						<div class="sheet-col-1-3 sheet-small-label">Death Ray</div>
 						<div class="sheet-col-1-8 sheet-center">
 							<button type="roll" name="roll_SDR" value="&{template:5eDefault} {{save=1}} {{title=Death Ray}} {{subheader=@{character_name} Saving Throw}} {{freetext=Must roll **@{save_death_ray}** or higher.}} {{rollname=Result}}  {{roll=[[1d20]]}}"></button>
 						</div>
-						<div class="sheet-col-1-6 sheet-small-label sheet-center">Poison</div>
+						<div class="sheet-col-5-24 sheet-small-label sheet-center">Poison</div>
+						<input class="sheet-col-1-12" name="attr_poison_mod" readonly="readonly" visibility="hidden"/>
 						<div class="sheet-col-1-8 sheet-center">
 							<button type="roll" name="roll_SP" value="&{template:5eDefault} {{save=1}} {{title=Poison}} {{subheader=@{character_name} Saving Throw}} {{freetext=Must roll **@{save_death_ray}** or higher.}} {{rollname=Result}} {{roll=[[1d20 + [[ @{constitution_mod} ]] ]]}}"></button>
 						</div>
 					</div>
 					<div class="sheet-row">
-						<div class="sheet-col-1-6 sheet-padr"><input type="number" name="attr_save_rod_staff_wand" min="1" step="1" /></div>
-						<div class="sheet-col-3-8 sheet-small-label">Rod / Staff</div>
+						<div class="sheet-col-1-8 sheet-padr"><input type="number" name="attr_save_rod_staff_wand" min="1" step="1" /></div>
+						<div class="sheet-col-1-3 sheet-small-label">Rod / Staff</div>
 						<div class="sheet-col-1-8 sheet-center">
 							<button type="roll" name="roll_SRS" value="&{template:5eDefault} {{save=1}} {{title=Rod / Staff}} {{subheader=@{character_name} Saving Throw}} {{freetext=Must roll **@{save_rod_staff_wand}** or higher.}} {{rollname=Result}} {{roll=[[1d20]]}}"></button>
 						</div>
-						<div class="sheet-col-1-6 sheet-small-label sheet-center">Wand</div>
+						<div class="sheet-col-5-24 sheet-small-label sheet-center">Wand</div>
+						<input class="sheet-col-1-12" name="attr_wand_mod" readonly="readonly" visibility="hidden"/>
 						<div class="sheet-col-1-8 sheet-center">
 							<button type="roll" name="roll_SW" value="&{template:5eDefault} {{save=1}} {{title=Wand}} {{subheader=@{character_name} Saving Throw}} {{freetext=Must roll **@{save_rod_staff_wand}** or higher.}} {{rollname=Result}} {{roll=[[1d20 + [[ @{dexterity_mod} ]] ]]}}"></button>
 						</div>
 						
 					</div>
 					<div class="sheet-row">
-						<div class="sheet-col-1-6 sheet-padr"><input type="number" name="attr_save_paralysis" min="1" step="1" /></div>
-						<div class="sheet-col-3-8 sheet-small-label">Paralysis or Turn to Stone</div>
+						<div class="sheet-col-1-8 sheet-padr"><input type="number" name="attr_save_paralysis" min="1" step="1" /></div>
+						<div class="sheet-col-1-3 sheet-small-label">Paralysis or Turn to Stone</div>
 						<div class="sheet-col-1-8 sheet-center">
 							<button type="roll" name="roll_SPTTS" value="&{template:5eDefault} {{save=1}} {{title=Paralysis or Turn to Stone}} {{subheader=@{character_name} Saving Throw}} {{freetext=Must roll **@{save_paralysis}** or higher.}} {{rollname=Result}} {{roll=[[1d20 + [[ @{strength_mod} ]] ]]}}"></button>
 						</div>
 					</div>
 					<div class="sheet-row">
-						<div class="sheet-col-1-6 sheet-padr"><input type="number" name="attr_save_blast_breath" min="1" step="1" /></div>
-						<div class="sheet-col-3-8 sheet-small-label">Blast / Breath Weapon</div>
+						<div class="sheet-col-1-8 sheet-padr"><input type="number" name="attr_save_blast_breath" min="1" step="1" /></div>
+						<div class="sheet-col-1-3 sheet-small-label">Blast / Breath Weapon</div>
 						<div class="sheet-col-1-8 sheet-center">
 							<button type="roll" name="roll_SDB" value="&{template:5eDefault} {{save=1}} {{title=Blast/Breath}} {{subheader=@{character_name} Saving Throw}} {{freetext=Must roll **@{save_blast_breath}** or higher.}} {{rollname=Result}} {{roll=[[1d20 + [[ @{dexterity_mod} ]] ]]}}"></button>
 						</div>
 					</div>
 					<div class="sheet-row">
-						<div class="sheet-col-1-6 sheet-padr"><input type="number" name="attr_save_spell" min="1" step="1" /></div>
-						<div class="sheet-col-3-8 sheet-small-label">Spell</div>
+						<div class="sheet-col-1-8 sheet-padr"><input type="number" name="attr_save_spell" min="1" step="1" /></div>
+						<div class="sheet-col-1-3 sheet-small-label">Spell</div>
 						<div class="sheet-col-1-8 sheet-center">
 							<button type="roll" name="roll_SSpell" value="&{template:5eDefault} {{save=1}} {{title=Spell}} {{subheader=@{character_name} Saving Throw}} {{freetext=Must roll **@{save_spell}** or higher.}} {{rollname=Result}} {{roll=[[1d20  + [[ @{wisdom_mod} ]] ]]}}"></button>
 						</div>
-						<div class="sheet-col-1-6 sheet-small-label sheet-center">Mind Effecting</div>
+						<div class="sheet-col-5-24 sheet-small-label sheet-center">Mind Affecting</div>
+						<input class="sheet-col-1-12" name="attr_mind_effect_mod_display" readonly="readonly" visibility="hidden"/>
+						<input type="hidden" name="attr_mind_effect_mod" readonly="readonly" visibility="hidden"/>
 						<div class="sheet-col-1-8 sheet-center">
-							<button type="roll" name="roll_SME" value="&{template:5eDefault} {{save=1}} {{title=Mind Effecting}} {{subheader=@{character_name} Saving Throw}} {{freetext=Must roll **@{save_spell}** or higher.}} {{rollname=Result}} {{roll=[[1d20 + [[ @{mind_effect_mod} ]] ]]}}"></button>
+							<button type="roll" name="roll_SME" value="&{template:5eDefault} {{save=1}} {{title=Mind Affecting}} {{subheader=@{character_name} Saving Throw}} {{freetext=Must roll **@{save_spell}** or higher.}} {{rollname=Result}} {{roll=[[1d20 + [[ @{mind_effect_mod} ]] ]]}}"></button>
 						</div>
 					</div>
 					<div class="sheet-row">
-						<div class="sheet-col-1-6 sheet-padr"><input type="number" name="attr_save_madness" min="1" step="1" /></div>
-						<div class="sheet-col-3-8 sheet-small-label">Madness</div>
+						<div class="sheet-col-1-8 sheet-padr"><input type="number" name="attr_save_madness" min="1" step="1" /></div>
+						<div class="sheet-col-1-3 sheet-small-label">Madness</div>
 						<div class="sheet-col-1-8 sheet-center">
 							<button type="roll" name="roll_SM" value="&{template:5eDefault} {{save=1}} {{title=Madness}} {{subheader=@{character_name} Saving Throw}} {{freetext=Must roll **@{save_madness}** or higher.}} {{rollname=Result}} {{roll=[[1d20]]}}"></button>
-						</div>
-						<div class="sheet-col-1-6">
-							<input type="number" name="attr_mind_effect_mod" readonly="readonly" visibility="hidden"/>
 						</div>
 					</div>
 					<span class="sheet-spacer"></span>
@@ -1066,13 +1064,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="sheet-col-1-6">
-					<h4 class="sheet-center">Wrestling <span class="sheet-pictos">g</span></h4>
-					<div class="sheet-row sheet-padr">
-						<div class="sheet-col-1-2 sheet-small-label sheet-center" title="Only enter additional bonuses to WR here from skills and weapon mastery. Your level, AC, and Ablity mods are already included in the macro button"><input class="sheet-underlined sheet-center" type="number" name="attr_WRbonus" value="0" step="1"><br/>Bonus</div>
-						<input class="sheet-underlined" type="hidden" name="attr_WR" value="[[(ceil(@{level} / 2))]] + [[@{ACunmod}]] + [[@{strength_mod}]] + [[@{dexterity_mod}]] + @{WRbonus}" disabled="disabled">
-						<div class="sheet-col-1-2 sheet-center">
-							<button type="roll" class="sheet-initiative sheet-large-button" name="roll_Wrestling" value="&{template:5eDefault} {{title=Wrestling}} {{subheader=@{character_name}}} {{rollname=Wrestling Roll}} {{roll=[[ 1d20 + @{WR} ]]}}">Wrestling</button>
+				<div class="sheet-col-1-6 sheet-padr">
+					<h4 class="sheet-center">Armor Class  <span class="sheet-pictos-three">b</span></h4>
+					<div class="sheet-row sheet-padb">
+						<div class="sheet-row">
+							<div class="sheet-col-1-1 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ACDisp" value="@{AC}" disabled="true"></div>
 						</div>
 					</div>
 				</div>
@@ -1090,9 +1086,9 @@
 				<div class="sheet-col-1-6">
 					<h4 class="sheet-center">Initiative <span class="sheet-pictos">t</span></h4>
 					<div class="sheet-row sheet-padr">
-						<div class="sheet-col-1-2 sheet-small-label sheet-center" title="Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button"><input class="sheet-underlined sheet-center" type="number" name="attr_initiative" value="0" step="1"><br/>Bonus</div>
+						<div class="sheet-col-1-3 sheet-small-label sheet-center" title="Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button"><input class="sheet-underlined sheet-center" type="number" name="attr_initiative" value="0" step="1"><br/>Bonus</div>
 						<input class="sheet-underlined" type="hidden" name="attr_initiative_overall" value="[[@{dexterity_mod}]] + @{initiative}" disabled="disabled">
-						<div class="sheet-col-1-2 sheet-center">
+						<div class="sheet-col-2-3 sheet-center">
 							<button type="roll" class="sheet-initiative sheet-large-button" name="roll_Initiative" value="&{template:5eDefault} {{title=Initiative}} {{subheader=@{character_name}}} {{rollname=Initiative}} {{roll=[[ 1d6 + @{initiative_overall} &{tracker} ]]}}">Initiative</button>
 						</div>
 					</div>
@@ -1138,8 +1134,70 @@
 					</div>
 				</div>
 			</fieldset>
-			<span class="sheet-spacer"></span>
-			<h4 class="sheet-center">Missile/Thrown Weapons <span class="sheet-pictos">e</span></h4>
+		<span class="sheet-spacer"></span>
+		<h4 class="sheet-center">Wrestling <span class="sheet-pictos">g</span></h4>
+			<div class="sheet-row sheet-padr">
+				<div class="sheet-col-1-12 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_halfLevel" value="(ceil(@{level} / 2))" disabled=true><br/>Level/2</div>
+				<div class="sheet-col-1-32 sheet-small-label sheet-center">+</div>
+				<div class="sheet-col-1-12 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_strMod" value="@{strength_mod}" disabled=true><br/>STR Mod</div>
+				<div class="sheet-col-1-32 sheet-small-label sheet-center">+</div>
+				<div class="sheet-col-1-12 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_dexMod" value="@{dexterity_mod}" disabled=true><br/>DEX Mod</div>
+				<div class="sheet-col-1-32 sheet-small-label sheet-center">+</div>
+				<div class="sheet-col-1-12 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_baseAC" value="@{eqarmour}" disabled=true><br/>Base AC</div>
+				<div class="sheet-col-1-32 sheet-small-label sheet-center">+</div>
+				<div class="sheet-col-1-12 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_Muscle" value="0" step="1"><br/>Muscle</div>
+				<div class="sheet-col-1-32 sheet-small-label sheet-center">+</div>
+				<div class="sheet-col-1-12 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_Acrobatics" value="0" step="1"><br/>Acrobatics</div>
+				<div class="sheet-col-1-32 sheet-small-label sheet-center">+</div>
+				<div class="sheet-col-1-12 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_WRmastery" value="@{masterylevel}" disabled=true><br/>Mastery</div>
+				<div class="sheet-col-1-32 sheet-small-label sheet-center">+</div>
+				<div class="sheet-col-1-12 sheet-small-label sheet-center" title="Only enter additional bonuses to WR not shown elsewhere on this page."><input class="sheet-underlined" type="number" name="attr_WRother" value="0" step="1"><br/>Other</div>
+				<div class="sheet-col-1-32 sheet-small-label sheet-center">=</div>
+				<div class="sheet-col-1-12 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_WR" value="(ceil(@{level} / 2) + @{strMod} + @{dexMod} + @{eqarmour} + @{Muscle} + @{Acrobatics} + @{masterylevel} + @{WRother})" disabled=true><br/>WR</div>
+			</div>
+			<div class="sheet-row sheet-padr">
+				<div class="sheet-col-1-10 sheet-small-label sheet-center">
+					<select name="attr_masterylevel">
+						<option value="0" selected="selected">Basic</option>
+						<option value="1">Skilled</option>
+						<option value="2">Expert</option>
+						<option value="3">Master</option>
+						<option value="4">Grand Master</option>
+					</select>
+					<br/>Mastery Level
+				</div>
+				<div class="sheet-col-1-11 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_CPMMastery" readonly="readonly"><br/>CPM Mastery</div>
+				<div class="sheet-col-1-6 sheet-small-label sheet-center">
+					<select name="attr_size">
+						<option value="0.25">Fine (1-100 cn)</option>
+						<option value="0.3">Diminutive (101-250 cn)</option>
+						<option value="0.5">Tiny (251-500 cn)</option>
+						<option value="0.75">Small (501-1000 cn)</option>
+						<option value="1" selected="selected">Medium (1001-2000 cn)</option>
+						<option value="1.5">Large (2001-4000 cn)</option>
+						<option value="2">Huge (4001-8000 cn)</option>
+						<option value="4">Gigantic (8k-32k cn)</option>
+						<option value="8">Colossal (32k+ cn)</option>
+					</select>
+					<br/>Size
+				</div>
+				<div class="sheet-col-1-12 sheet-small-label sheet-center" title="Only enter additional bonuses to CPM not shown elsewhere on this page."><input class="sheet-underlined sheet-center" type="number" name="attr_CPMbonus" value="0" step="1"><br/>CPM Bonus</div>
+				<!--<input class="sheet-underlined" type="hidden" name="attr_WR" value="[[(ceil(@{level} / 2))]] + [[@{ACunmod}]] + [[@{strength_mod}]] + [[@{dexterity_mod}]] + @{WRbonus}" disabled="disabled">-->
+				<div class="sheet-col-1-64 sheet-small-label sheet-center"></div>
+				<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ControlPoints" step="1" value="0"><br/>Control Points</div>
+				<div class="sheet-col-1-64 sheet-small-label sheet-center">/</div>
+				<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_CPM" value="(@{WR} - @{WRmastery} - @{WRother}) * @{size} + @{CPMMastery} + @{CPMbonus}" disabled=true><br/>Control Points Max</div>
+				<div class="sheet-col-1-10 sheet-small-label sheet-center"><input class="sheet-underlined" type="text" name="attr_Status"><br/>Control Status</div>
+				<div class="sheet-col-1-12 sheet-center">
+					<button type="roll" class="sheet-initiative sheet-large-button" name="roll_Wrestling" value="&{template:5eDefault} {{title=Wrestling}} {{subheader=@{character_name}}} {{rollname=Wrestling Roll}} {{roll=[[ 1d20 + @{WR} ]]}}">Wrestle</button>
+				</div>
+				<input class="sheet-underlined" type="hidden" name="attr_wrestling_damage_roll" value="1d3" readonly="readonly">
+				<div class="sheet-col-1-12 sheet-center">
+					<button type="roll" class="sheet-initiative sheet-large-button" name="roll_WrestlingDamage" value="&{template:5eDefault} {{title=Wrestling Damage/Control}} {{subheader=@{character_name}}} {{rollname=Wrestling Damage}} {{roll=[[ @{wrestling_damage_roll} ]]}}">Damage</button>
+				</div>
+			</div>
+		<span class="sheet-spacer"></span>
+		<h4 class="sheet-center">Missile/Thrown Weapons <span class="sheet-pictos">e</span></h4>
 			<div class="sheet-row sheet-sub-header">
 				<div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom">Vs</div>
 				<div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom">Type</div>
@@ -4596,8 +4654,14 @@ on("sheet:opened change:wisdom", eventInfo => {
 on("sheet:opened change:dexterity", eventInfo => {
 	getAttrs(["dexterity"], values => {
 		var mod = attribute2Adjustment(parseInt(values.dexterity, 10));
+		var modDisplay = mod;
+		if (mod >= 0)
+		{
+			modDisplay = "+" + mod;
+		}
 		setAttrs({
-			dexterity_mod : mod
+			dexterity_mod : mod,
+			wand_mod : modDisplay
 		});
    	});
 });
@@ -4605,8 +4669,14 @@ on("sheet:opened change:dexterity", eventInfo => {
 on("sheet:opened change:constitution", eventInfo => {
 	getAttrs(["constitution"], values => {
 		var mod = attribute2Adjustment(parseInt(values.constitution, 10));
+		var modDisplay = mod;
+		if (mod >= 0)
+		{
+			modDisplay = "+" + mod;
+		}
 		setAttrs({
-			constitution_mod : mod
+			constitution_mod : mod,
+			poison_mod : modDisplay
 		});
    	});
 });
@@ -4650,7 +4720,7 @@ function attribute2Adjustment (attribute)
 	if (str == 99) { mod = 19; }
 	if (str == 100) { mod = 20; }
 	var modString = "Mod: " + mod
-	console.log(modString);
+	//console.log(modString);
 
 	return mod;
 }
@@ -4659,12 +4729,21 @@ on("sheet:opened change:intelligence change:wisdom change:wisdom_mod change:inte
 	getAttrs(["intelligence_mod", "wisdom_mod"], values => {
 		var Int = parseInt(values.intelligence_mod, 10);
 		var Wis = parseInt(values.wisdom_mod, 10);
-		console.log("Calculating Mind Effect");
-		console.log("Unparsed Wisdom Mod: " + values.wisdom_mod);
-		console.log("Wisdom Mod: " + parseInt(values.wisdom_mod, 10));
+		//console.log("Calculating Mind Effect");
+		//console.log("Unparsed Wisdom Mod: " + values.wisdom_mod);
+		//console.log("Wisdom Mod: " + parseInt(values.wisdom_mod, 10));
 		var mod = Math.max( Math.min( Math.max( Math.min( Math.max((Wis+Int), -3), 3) , Wis), (Wis+Int) ) , -3);
+		if (mod >= 0)
+		{
+			modDisplay = "+" + mod;
+		}
+		else
+		{
+			modDisplay = mod;
+		}
 		setAttrs({
-			mind_effect_mod : mod
+			mind_effect_mod : mod,
+			mind_effect_mod_display : modDisplay
 		});
    	});
 });
@@ -4680,11 +4759,11 @@ on("sheet:opened change:charisma change:diplomacy_rank", eventInfo => {
    	});
 });
 
-on("sheet:opened change:charisma change:intimidation_rank", eventInfo => {
-	getAttrs(["charisma", "intimidation_rank"], values => {
-		var Cha = parseInt(values.charisma, 10);
+on("sheet:opened change:strength change:intimidation_rank", eventInfo => {
+	getAttrs(["strength", "intimidation_rank"], values => {
+		var Str = parseInt(values.strength, 10);
 		var Rank = parseInt(values.intimidation_rank, 10);
-		var mod = Cha+Rank;
+		var mod = Str+Rank;
 		setAttrs({
 			intimidation_score : mod
 		});
@@ -4889,8 +4968,8 @@ on("sheet:opened change:total_weight change:basemove change:barbspeed change:bar
 		{
 			topCapacityMod = 100 * strMod;
 		}
-		console.log ("Barbarian: " + barb);
-		console.log ("Barbarian unparsed: " + values.barbspeed);
+		//console.log ("Barbarian: " + barb);
+		//console.log ("Barbarian unparsed: " + values.barbspeed);
 		if (barb) // Plus 30 if enraged, -30 if exhausted
 		{
 			move += barbState*30;
@@ -4920,45 +4999,45 @@ on("sheet:opened change:total_weight change:basemove change:barbspeed change:bar
 		{
 			if ( ( !barb || barbState == -1) && weight <= (2400 + topCapacityMod) && weight > 1600) // Not a barbarian or an exhausted barbarian, then we are in the minimum state
 			{
-				console.log ("Final speed for non-barbarians and exhuasted barbarians, -90 and then halved");
+				//console.log ("Final speed for non-barbarians and exhuasted barbarians, -90 and then halved");
 				move -= 90;
 				move /= 2;
 			}
 			else if ( ( !barb || barbState == -1) && weight > (2400 + topCapacityMod)) // Not a barbarian or an exhausted barbarian, then we cannot move
 			{
-				console.log ("No speed for non-barbarians and exhuasted barbarians over 1600");
+				//console.log ("No speed for non-barbarians and exhuasted barbarians over 1600");
 				move = 0;
 			}
 			else if ( ( barb && barbState >= 0) && weight <= 2400 && weight > 1600) // Non-exhausted barbarian continues normal another step
 			{
-				console.log ("Non exhausted barbarian over 1600: -120");
+				//console.log ("Non exhausted barbarian over 1600: -120");
 				move -= 120;
 			}
 			else if ( ( barb && barbState == 0) && weight <= (2800 + topCapacityMod) && weight > 2400) // Normal barbarian is at minimum speed up to 2800
 			{
-				console.log ("Normal barbarian over 2400: -120 and then halved");
+				//console.log ("Normal barbarian over 2400: -120 and then halved");
 				move -= 120;
 				move /= 2;
 			}
 			else if ( ( barb && barbState == 0) && weight > (2800 + topCapacityMod)) // Normal barbarian cannot move above 2800
 			{
-				console.log ("No speed for normal barbarians over 2800");
+				//console.log ("No speed for normal barbarians over 2800");
 				move = 0;
 			}
 			else if ( ( barb && barbState == 1) && weight <= 2800 && weight > 2400) // Enraged barbarian continues another normal step
 			{
-				console.log ("Enraged barbarian over 2400: -150");
+				//console.log ("Enraged barbarian over 2400: -150");
 				move -= 150;
 			}
 			else if ( ( barb && barbState == 1) && weight <= (3200 + topCapacityMod) && weight > 2800) // Enraged barbarian is at minimum speed up to 3200
 			{
-				console.log ("Enraged barbarian over 2800: -150 and then halved");
+				//console.log ("Enraged barbarian over 2800: -150 and then halved");
 				move -= 150;
 				move /= 2;
 			}
 			else if ( ( barb && barbState == 1) && weight > (3200 + topCapacityMod)) // Enraged barbarian cannot move above 3200
 			{
-				console.log ("No speed for enraged barbarians over 3200");
+				//console.log ("No speed for enraged barbarians over 3200");
 				move = 0;
 			}
 		} 
@@ -4968,6 +5047,82 @@ on("sheet:opened change:total_weight change:basemove change:barbspeed change:bar
 		});
 	});
 }); 
+
+on("sheet:opened change:masterylevel", eventInfo => {
+	getAttrs(["masterylevel"], values => {
+		var mastery = parseInt(values.masterylevel);
+		var cpmBonus = 0;
+		var damageRoll = "1d3";
+		if (mastery > 0)
+		{
+			cpmBonus = 2 ** (mastery-1);
+		}
+		switch (mastery)
+		{
+			case 1:
+				damageRoll = "1d4+1";
+				break;
+			case 2:
+				damageRoll = "1d6+1";
+				break;
+			case 3:
+				damageRoll = "2d4";
+				break;
+			case 4:
+				damageRoll = "3d4";
+				break;
+			default:
+				damageRoll = "1d3";
+				break;
+		}
+		setAttrs({
+			CPMMastery : cpmBonus,
+			wrestling_damage_roll : damageRoll
+		});
+	});
+});
+
+on("sheet:opened change:ControlPoints change:CPM", eventInfo => {
+	getAttrs(["ControlPoints", "CPM", "WR", "WRmastery", "WRother", "size", "CPMMastery", "CPMbonus", "level", "strength_mod", "dexterity_mod", "ACunmod", "Muscle", "Acrobatics", "masterylevel", "WRother", "eqarmour"], values => {
+		var CP = parseFloat(values.ControlPoints);
+		var WR = parseFloat(values.WR);
+		WR = Math.ceil(parseFloat(values.level)/2) + parseFloat(values.strength_mod) + parseFloat(values.dexterity_mod) + parseFloat(values.eqarmour) + parseFloat(values.Muscle) + parseFloat(values.Acrobatics) + parseFloat(values.masterylevel) + parseFloat(values.WRother);
+		var WRmastery = parseFloat(values.masterylevel);
+		var WRother = parseFloat(values.WRother);
+		var size = parseFloat(values.size);
+		var CPMMastery = parseFloat(values.CPMMastery);
+		var CPMbonus = parseFloat(values.CPMbonus);
+		var status = "Free";
+		var CPM = (WR - WRmastery - WRother) * size + CPMMastery + CPMbonus;
+		if (CP > CPM)
+		{
+			status = "Helpless";
+		}
+		else if (CP == CPM)
+		{
+			status = "Pinned";
+		}
+		else if (CP >= CPM/2)
+		{
+			status = "Clinched";
+		}
+		else if (CP >= CPM/5)
+		{
+			status = "Held";
+		}
+		else if (CP >= 1)
+		{
+			status = "Touched";
+		}
+		else
+		{
+			status = "Free";
+		}
+		setAttrs({
+			Status : status 
+		});
+	});
+});
 	
 on('change:repeating_inventtab1 remove:repeating_inventtab1', function(){
 
@@ -5090,5 +5245,3 @@ on('change:repeating_inventtab7 remove:repeating_inventtab7', function(){
 
 
 </script>
-
-
