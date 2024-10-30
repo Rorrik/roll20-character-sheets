@@ -254,7 +254,7 @@ body.sheet-darkmode .charsheet {
 	background-position: left top;
 	background-repeat: no-repeat;
 	background-size: contain;
-	min-height: 50px;
+	min-height: 75px;
 }
 
 .sheet-footer {
@@ -274,7 +274,7 @@ body.sheet-darkmode .charsheet {
 }
 
 .sheet-darkmode .sheet-logo {
-	--background-image: url("https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/D%26D_BECM/images/dungeons_and_dragons_logo_white.png");
+	--background-image: url("https://raw.githubusercontent.com/Rorrik/roll20-character-sheets/master/FABDOFS/Images/Dragon_Logo_2_No_BG.png");
 }
 
 /* Tweak repeating section buttons so they have a bottom margin and dont overflow when in edit mode. */
